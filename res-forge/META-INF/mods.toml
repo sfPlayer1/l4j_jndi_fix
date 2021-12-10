@@ -1,0 +1,12 @@
+modLoader="javafml"
+loaderVersion="[24,)"
+license="Apache-2.0"
+[[mods]]
+modId="l4j_jndi_fix"
+version="1.0.0"
+displayName="Log4J2 JNDI Fix"
+displayURL="https://github.com/sfPlayer1/l4j_jndi_fix"
+authors="Player"
+description='''
+This mod fixes a critical vulnerability in Log4J2 in conjunction with JNDI.
+'''

@@ -8,11 +8,11 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.lookup.Interpolator;
 
-import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
+import cpw.mods.fml.common.Mod;
 
-public class Entrypoint implements PreLaunchEntrypoint {
-	@Override
-	public void onPreLaunch() {
+@Mod(modid = "l4j_jndi_fix", version = "1.0.0")
+public class FmlMod {
+	static {
 		((org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false)).addPropertyChangeListener(new PropertyChangeListener() {
 			@Override
 			public void propertyChange(PropertyChangeEvent evt) {
@@ -29,6 +29,8 @@ public class Entrypoint implements PreLaunchEntrypoint {
 	private static void apply() {
 		try {
 			Interpolator interpolator = (Interpolator) ((org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false)).getConfiguration().getStrSubstitutor().getVariableResolver();
+			if (interpolator == null) return;
+
 			boolean removed = false;
 
 			for (Field field : Interpolator.class.getDeclaredFields()) {
