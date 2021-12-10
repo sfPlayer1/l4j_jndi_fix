@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "l4j_jndi_fix",
+  "version": "1.0.0",
+  "name": "Log4J2 JNDI Fix",
+  "description": "This mod fixes a critical vulnerability in Log4J2 in conjunction with JNDI.",
+  "authors": [
+    "Player"
+  ],
+  "contact": {
+    "sources": "https://github.com/sfPlayer1/l4j_jndi_fix"
+  },
+  "license": "Apache-2.0",
+  "environment": "*",
+  "entrypoints": {
+    "preLaunch": [
+      "to.player.l4j_jndi_fix.Entrypoint"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.7.0",
+    "minecraft": ">=1.7",
+    "java": ">=8"
+  }
+}
